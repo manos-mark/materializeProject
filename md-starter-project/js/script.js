@@ -29,8 +29,8 @@ function loadData(){
 	templateScript = Handlebars.compile(template);
 
     $.ajax({	
-        // url:'https://my-json-server.typicode.com/AntoniosProvidakis/json-db/quotes', 
-        url: 'https://api.myjson.com/bins/1a10db',
+        url:'https://my-json-server.typicode.com/AntoniosProvidakis/json-db/quotes', 
+        // url: 'https://api.myjson.com/bins/1a10db',
         dataType: 'json',
         method: 'GET',
         cache: false,
@@ -40,7 +40,7 @@ function loadData(){
 			data.forEach(function(post){
 				     
 				// Use the data that we need with handlebars
-				var context = { "id": id ,"title" : post.author, "body" : post.quote, "image": post.image }; //post.image
+				var context = { "id": id ,"title" : post.author, "body" : post.quote, "image": post.picture }; //post.image
 				var html = templateScript(context);
 				// Insert the HTML code into the page
 				$("#entry-template").append(html);
@@ -158,11 +158,11 @@ function createNewModal(){
 
 function clearData(){
 	 $('#add_image_url').val('');
-	 $('#add_image_url').focus();
+	 $('#add_image_url').off( "focus" );
 	 $('#add_image_title').val('');
-	 $('#add_image_title').focus();
+	 $('#add_image_title').off( "focus" );
 	 $('#add_image_description').val('');
-	 $('#add_image_description').focus();
+	 $('#add_image_description').off( "focus" );
 }
 
 //add pagination and listeners
@@ -200,6 +200,11 @@ function loadPagination(cnt){
 
 		});
 		// console.log('range: '+(i*cardsPerPage-cardsPerPage)+' '+(i*cardsPerPage-1));	
+	}
+
+	//if there is only one page set right arrow disable
+	if( $('.pagination li').length == 2){// 3 li (two arrows and one page)
+		$('rightArrow').addClass('disabled');
 	}
 	
 	//left arrow listener
