@@ -1,0 +1,53 @@
+/* All your custom CSS goes here */
+.container{
+    margin-top: -1%;
+}
+.card{
+	margin-bottom: 15%;
+}
+
+.fixed-action-btn {
+  float: right;
+  position: relative;
+  right: 10px;
+  bottom: 40px;
+}
+
+.idDiv {
+  float: left;
+  position: relative;
+  left: 10px;
+  top: 0px;
+}
+
+#my-fixed-button{
+	position: fixed;
+  	top: 80%;
+  	left:5%;
+  	text-align:left;
+}
+
+/*.row.grid .cell {
+   flex: auto;
+  margin-left: 0;
+}*/	
+
+@media (min-width: 1000px) {
+  .row {
+    display: flex;
+	  flex-wrap: wrap;
+	  align-content: flex-start;
+  }
+
+  .container{
+		margin:5% auto;
+	}
+}
+
+.card-title{
+	text-shadow: 0 0 2px #000000;
+}
+
+#modalDelete{
+	margin-top: 10%;
+}
