@@ -172,7 +172,7 @@ function loadPagination(cnt){
 	var howManyPages = Math.ceil( cnt / cardsPerPage );
 
 	//set always on start p1 active and visible 
-	$('body').on('click', '#p1', function(){
+	$('#body').on('click', '#p1', function(){
 			setActive($(this));
 			setCardsInvisible();
 			setCardsVisible(0, cardsPerPage-1);
@@ -186,7 +186,7 @@ function loadPagination(cnt){
 	for( let i=2; i<=howManyPages; i++){//let keyword makes the i variable local to the loop instead of global
 		$('.pagination').append('<li class=".page waves-effect"><a id=p' +i+ ' href="#">' +i+ '</a></li>');
 		
-		$('body').on('click', '#p'+i,function(){
+		$('#body').on('click', '#p'+i,function(){
 			
 			setActive($(this));
 			setCardsInvisible();
@@ -209,7 +209,7 @@ function loadPagination(cnt){
 	}
 	
 	//left arrow listener
-	$('body').on('click', '#leftArrow', function(){
+	$('#body').on('click', '#leftArrow', function(){
 		if( !$(this).hasClass('disabled') ){
 			var currentActive = $(this).siblings('.active');
 			$(currentActive).removeClass('active');
@@ -219,7 +219,7 @@ function loadPagination(cnt){
 	});
 
 	//right arrow listener
-	$('body').on('click', '#rightArrow', function(){
+	$('#body').on('click', '#rightArrow', function(){
 		if( !$(this).hasClass('disabled') ){
 			var currentActive = $(this).siblings('.active');
 			$(currentActive).removeClass('active');
