@@ -31,6 +31,7 @@ function loadData(){
     $.ajax({	
         url:'https://my-json-server.typicode.com/AntoniosProvidakis/json-db/quotes', 
         // url: 'https://api.myjson.com/bins/1a10db',
+        // url: 'cards.json',
         dataType: 'json',
         method: 'GET',
         cache: false,
